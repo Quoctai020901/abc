@@ -8,6 +8,7 @@ read -p "  Vui lòng chọn một số và nhấn Enter (Enter theo mặc địn
     case "${num}" in
         1) apt update -y && apt install nginx -y && ufw allow 'Nginx HTTP'
         cd /etc/nginx/sites-available
+        rm -rf default
        wget -b https://raw.githubusercontent.com/Quoctai020901/abc/main/default
  systemctl restart nginx && systemctl enable nginx && systemctl status nginx
         
